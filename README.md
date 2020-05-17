@@ -28,6 +28,15 @@ interview_app_env\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. Initialise the database
+```
+# Mac / Linux
+./init.sh
+
+# Windows
+init.bat
+```
+
 ## Running
 
 ```
