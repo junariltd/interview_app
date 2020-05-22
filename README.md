@@ -9,38 +9,22 @@ Technical interviews.
 
 ## Set up
 
-1. Create a virtual environment
-```
-python3 -m venv interview_app_env
-```
+The script below creates a Virtual Environment, installs dependencies, and initialises the SQLite database
 
-2. Activate it
 ```
 # Mac/Linux
-source interview_app_env/bin/activate
-
-# Windows
-interview_app_env\Scripts\activate
-```
-
-3. Install python dependencies
-```
-pip install -r requirements.txt
-```
-
-4. Initialise the database
-```
-# Mac / Linux
+cd junari_interview_app
 ./init.sh
 
 # Windows
+cd junari_interview_app
 init.bat
 ```
 
-## Running
+## Running for development
 
 ```
-# Mac / Linux
+# Mac/Linux
 ./run.sh
 
 # Windows
