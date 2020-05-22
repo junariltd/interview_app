@@ -5,5 +5,40 @@
 {% endblock %}
 
 {% block content %}
-<div id="app"></div>
+<div class="container">
+    <div class="row" style="margin-top: 30px;">
+        <div id="app"></div>
+
+        <h2>Customers</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Company</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">ABC Customer Ltd</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                </tr>
+                <tr>
+                    <th scope="row">Dom's Doughnuts</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ed's Kebabs</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary">Create Customer</button>
+
+    </div>
+</div>
 {% endblock %}
