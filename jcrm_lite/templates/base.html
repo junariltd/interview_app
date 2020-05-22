@@ -5,6 +5,7 @@
     <title>Junari CRM Lite{% block title %}{% endblock %}</title>
     <link type="image/x-icon" rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap-4.0.0.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
     <script src="{{ url_for('static', filename='lib/bootstrap-native-v4.min.js') }}"></script>
     {% block head %}{% endblock %}
 </head>
@@ -29,10 +30,10 @@
             <span class="navbar-text">
                 <ul class="list-inline m-0">
                     {% if g.user %}
-                    <li class="list-inline-item"><span style="padding-right: 8px;">{{ g.user['username'] }}</span>
+                    <li class="list-inline-item wide"><span style="padding-right: 8px;">{{ g.user['username'] }}</span>
                     <li class="list-inline-item"><a href="{{ url_for('auth.logout') }}">Log Out</a>
                         {% else %}
-                    <li class="list-inline-item"><a href="{{ url_for('auth.register') }}">Register</a>
+                    <li class="list-inline-item wide"><a href="{{ url_for('auth.register') }}">Create Account</a>
                     <li class="list-inline-item"><a href="{{ url_for('auth.login') }}">Log In</a>
                         {% endif %}
                 </ul>
@@ -40,15 +41,10 @@
         </div>
     </nav>
 
-    <section class="content">
-        <header>
-            {% block header %}{% endblock %}
-        </header>
-        {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-        {% endfor %}
-        {% block content %}{% endblock %}
-    </section>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
 </body>
 
 </html>

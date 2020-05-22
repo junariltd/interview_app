@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
-{% block header %}
-<h1>{% block title %}Log In{% endblock %}</h1>
-{% endblock %}
-
 {% block content %}
-<form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
-</form>
+<div class="container">
+    <div class="row justify-content-center" style="margin-top: 30px;">
+        <div class="col-md-6">
+            <h1>Log In</h1>
+
+            <form method="post">
+                <div class="form-group">
+                    <input class="form-control" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
