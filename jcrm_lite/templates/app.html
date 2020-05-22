@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<script src="{{ url_for('static', filename='lib/owl.js') }}"></script>
+{% endblock %}
+
 {% block content %}
 <div id="app"></div>
 {% endblock %}
