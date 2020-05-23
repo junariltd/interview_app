@@ -1,19 +1,21 @@
-DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS opportunity;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS contacts;
 
-CREATE TABLE user (
+CREATE TABLE users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL
 );
 
-CREATE TABLE opportunity (
+CREATE TABLE contacts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER NOT NULL,
-  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  name TEXT NOT NULL,
-  summary TEXT NOT NULL,
-  details TEXT,
-  value DECIMAL(10,2),
-  FOREIGN KEY (user_id) REFERENCES user (id)
+  company_name TEXT NOT NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created_by_user_id INTEGER NOT NULL,
+  updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_by_user_id INTEGER NOT NULL,
+  FOREIGN KEY (created_by_user_id) REFERENCES users (id),
+  FOREIGN KEY (updated_by_user_id) REFERENCES users (id)
 );
