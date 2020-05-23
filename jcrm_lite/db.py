@@ -18,6 +18,16 @@ def get_db():
     return g.db
 
 
+def dictfetchall(db, sql, args=()):
+    cr = db.cursor()
+    cr.execute(sql, args)
+    cols = [col[0] for col in cr.description]
+    results = []
+    for row in cr.fetchall():
+        results.append(dict(zip(cols, row)))
+    return results
+
+
 def close_db(e=None):
     db = g.pop('db', None)
 
