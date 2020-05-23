@@ -1,26 +1,26 @@
-import { CustomerList } from '/static/js/customer_list.js';
+import { ContactList } from '/static/js/contact_list.js';
+import { ContactForm } from '/static/js/contact_form.js';
 
 const { Component } = owl;
 const { xml } = owl.tags;
+const { Router, RouteComponent } = owl.router;
 const { whenReady } = owl.utils;
 
 class App extends Component {
-    static components = { CustomerList }
+    static components = { RouteComponent }
     static template = xml`
-        <div class="container">
-            <div class="row" style="margin-top: 30px;">
-                <h2>Customers</h2>
-                <CustomerList customers="customers" />
-            </div>
-        </div>`;
-    customers = [
-        { company_name: 'ABC Customer Ltd', first_name: 'Mark', last_name: 'Otto' },
-        { company_name: 'Dom\'s Doughnuts', first_name: 'Jacob', last_name: 'Thornton' },
-        { company_name: 'Ed\'s Kebabs', first_name: 'Larry', last_name: 'the Bird' },
-    ];
+        <RouteComponent />
+    `;
 }
 
-whenReady(() => {
+const ROUTES = [
+    { name: "CONTACT_LIST", path: "/", component: ContactList },
+    { name: "CONTACT_FORM", path: "/contacts/{{id}}", component: ContactForm },
+];
+
+whenReady(async () => {
     const app = new App();
+    app.env.router = new Router(app.env, ROUTES);
+    await app.env.router.start();
     app.mount(document.getElementById('app'));
 });
