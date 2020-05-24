@@ -1,6 +1,6 @@
 
-from .db import get_db, dictfetchall
-from .auth import login_required
+from ..db import get_db, dictfetchall
+from ..auth import login_required
 from flask import jsonify, request, session
 import time
 
@@ -36,6 +36,7 @@ def register_api(app):
         company_name = update['company_name'].strip()
         first_name = update['first_name'].strip()
         last_name = update['last_name'].strip()
+
         if not company_name or not first_name or not last_name:
             return jsonify({'success': False, 'message': 'Required field(s) not set'})
 
