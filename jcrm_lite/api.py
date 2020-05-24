@@ -1,7 +1,8 @@
 
 from .db import get_db, dictfetchall
 from .auth import login_required
-from flask import jsonify, request
+from flask import jsonify, request, session
+import time
 
 API_PREFIX = '/api/v1'
 
@@ -38,11 +39,17 @@ def register_api(app):
         if not company_name or not first_name or not last_name:
             return jsonify({'success': False, 'message': 'Required field(s) not set'})
 
+        updated_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        updated_user_id = session.get("user_id")
+
         db = get_db()
         db.execute("""
             UPDATE contacts
-            SET company_name = ?, first_name = ?, last_name = ?
+            SET company_name = ?, first_name = ?, last_name = ?,
+            updated_date = ?, updated_user_id = ?
             WHERE id = ?
-        """, (company_name, first_name, last_name, contact_id))
+        """, (company_name, first_name, last_name,
+              updated_date, updated_user_id, contact_id))
         db.commit()
+
         return jsonify({'success': True})
