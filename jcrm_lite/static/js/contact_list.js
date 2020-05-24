@@ -1,6 +1,5 @@
 const { Component, useState } = owl;
 const { xml } = owl.tags;
-const { Link } = owl.router;
 
 export class ContactList extends Component {
     constructor() {
@@ -22,7 +21,12 @@ export class ContactList extends Component {
         this.state.contacts = contacts;
     }
 
-    static components = { Link }
+    onRowClick(id) {
+        this.env.router.navigate({
+            to: 'contact_form', params: { id }
+        });
+    }
+
     static template = xml /* xml */ `
         <div class="container">
             <div class="row" style="margin-top: 30px;">
@@ -30,7 +34,6 @@ export class ContactList extends Component {
                     <h2>Contacts</h2>
 
                     <t t-if="state.loaded">
-                        <Link to="'CONTACT_FORM'" params="{id: 1}">Contact Form</Link>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -40,18 +43,14 @@ export class ContactList extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr t-foreach="state.contacts" t-as="contact">
+                                <tr t-foreach="state.contacts" t-as="contact"
+                                        t-on-click="onRowClick(contact.id)">
                                     <th scope="row"><t t-esc="contact.company_name" /></th>
                                     <td><t t-esc="contact.first_name" /></td>
                                     <td><t t-esc="contact.last_name" /></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </t>
-                    <t t-else="">
-                        <div class="spinner-border" style="margin-top: 16px;" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
                     </t>
                 </div>
             </div>

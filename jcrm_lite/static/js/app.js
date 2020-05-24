@@ -14,8 +14,8 @@ class App extends Component {
 }
 
 const ROUTES = [
-    { name: "CONTACT_LIST", path: "/", component: ContactList },
-    { name: "CONTACT_FORM", path: "/contacts/{{id}}", component: ContactForm },
+    { name: "contact_list", path: "/", component: ContactList },
+    { name: "contact_form", path: "/contacts/{{id}}", component: ContactForm },
 ];
 
 whenReady(async () => {

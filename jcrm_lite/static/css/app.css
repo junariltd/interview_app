@@ -1,3 +1,6 @@
 .list-inline-item.wide {
     margin-right: 16px;
 }
+.table-hover tbody tr {
+    cursor: pointer;
+}

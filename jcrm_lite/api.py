@@ -16,3 +16,13 @@ def register_api(app):
             db, "SELECT * FROM contacts ORDER BY company_name"
         )
         return jsonify(contacts)
+
+    @app.route(API_PREFIX + '/contact/<int:contact_id>', methods=['GET'])
+    @login_required
+    def get_contact(contact_id):
+        db = get_db()
+        contacts = dictfetchall(
+            db, "SELECT * FROM contacts WHERE id = ?",
+            (contact_id,)
+        )
+        return jsonify(contacts[0])

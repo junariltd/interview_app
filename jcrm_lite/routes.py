@@ -8,8 +8,9 @@ from .api import register_api
 def register_routes(app):
 
     @app.route('/')
+    @app.route('/<path:path>')
     @login_required
-    def index():
+    def index(path='/'):
         db = get_db()
         return render_template('app.html')
 
