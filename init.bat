@@ -1,8 +1,8 @@
 @echo off
 
 rem Configure Virtual Env
-python3 -m venv interview_app_env
-interview_app_env\Scripts\activate.bat
+python -m venv interview_app_env
+call interview_app_env\Scripts\activate.bat
 pip install -r requirements.txt
 
 rem Init DB

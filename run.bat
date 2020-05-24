@@ -1,7 +1,7 @@
 @echo off
 
 rem Activate Virtual Env
-interview_app_env\Scripts\activate.bat
+call interview_app_env\Scripts\activate.bat
 
 rem Run App
 set FLASK_APP=jcrm_lite
