@@ -9,7 +9,7 @@ edit contacts.
 This application consists of a [Flask](https://github.com/pallets/flask) web
 server with a JSON API, and a JavaScript front-end that uses the
 [Odoo Web Library](https://github.com/odoo/owl/blob/master/doc/readme.md)
-framework (a React/Vue-like framework used in Odoo).
+framework (a modern React/Vue-like framework).
 
 ## Requirements
 
