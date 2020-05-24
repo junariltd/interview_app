@@ -5,4 +5,14 @@
 <script type="module" src="/static/js/app.js"></script>
 {% endblock %}
 
-{% block content %}<div id="app"></div>{% endblock %}
+{% block content %}
+<div id="app"></div>
+<script id="session-data" type="application/json">{
+{% if g.user %}
+    "user": {
+        "id": {{ g.user['id'] }},
+        "username": "{{ g.user['username'] }}"
+    }
+{% endif %}
+}</script>
+{% endblock %}

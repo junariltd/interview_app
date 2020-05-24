@@ -57,7 +57,7 @@ def create_demo_data(db):
         ('Ed\'s Kebabs', 'Larry', 'the Bird')
     ]
     insert_stmt = """INSERT INTO contacts (company_name, first_name, last_name,
-        created_date, created_by_user_id, updated_date, updated_by_user_id)
+        created_date, created_user_id, updated_date, updated_user_id)
         VALUES (?,?,?,?,?,?,?)"""
     now = time.strftime("%Y-%m-%d %H:%M:%S")
     meta = (now, user_id, now, user_id)

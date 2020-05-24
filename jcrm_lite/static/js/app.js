@@ -22,6 +22,7 @@ whenReady(async () => {
     const app = new App();
     app.env.apiPrefix = '/api/v1';
     app.env.router = new Router(app.env, ROUTES);
+    app.env.sessionData = JSON.parse(document.getElementById('session-data').textContent)
     await app.env.router.start();
     app.mount(document.getElementById('app'));
 });

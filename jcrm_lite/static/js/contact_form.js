@@ -25,7 +25,22 @@ export class ContactForm extends Component {
 
     async saveContact(e) {
         e.preventDefault();
-        console.log('saving', JSON.stringify(this.state.contact));
+        const { company_name, first_name, last_name } = this.state.contact
+        const contact_update = {
+            company_name, first_name, last_name
+        }
+        const updateResponse = await fetch(this.env.apiPrefix + '/contact/' + this.props.id, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(contact_update)
+        })
+        const updateResult = await updateResponse.json()
+        if (updateResult.success) {
+            this.env.router.navigate({ to: 'contact_list' });
+        }
+        else {
+            throw new Error('Contact Update Unsuccessful: ' + JSON.stringify(updateResult))
+        }
     }
 
     static components = { Link };

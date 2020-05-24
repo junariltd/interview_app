@@ -13,9 +13,9 @@ CREATE TABLE contacts (
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
   created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  created_by_user_id INTEGER NOT NULL,
+  created_user_id INTEGER NOT NULL,
   updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_by_user_id INTEGER NOT NULL,
-  FOREIGN KEY (created_by_user_id) REFERENCES users (id),
-  FOREIGN KEY (updated_by_user_id) REFERENCES users (id)
+  updated_user_id INTEGER NOT NULL,
+  FOREIGN KEY (created_user_id) REFERENCES users (id),
+  FOREIGN KEY (updated_user_id) REFERENCES users (id)
 );
