@@ -17,39 +17,39 @@ framework - a modern React/Vue-like framework.
 * A modern web browser (Chrome or Firefox recommended).
   The app uses JS modules and async functions.
 
-## Set up
+## Setup
 
-First, check-out the repository onto your local machine
+This projects uses **pipenv** to install its dependencies and for running scripts
+- refer to the pipenv installation notes in the 
+[README](https://github.com/pypa/pipenv/blob/master/README.md) for instructions on
+installing it.
+
+Once you have `pipenv` set up, check-out the repository onto your local machine
 
 ```bash
 git clone git@github.com:junariltd/interview_app.git
 cd interview_app
 ```
 
-Now you can run the provided `init` script, which creates a Virtual Environment,
-installs dependencies, and initialises the SQLite database.
+Now run the following commands to configure and run the project
 
-```
-# Mac/Linux
-./init.sh
+```bash
+# run these from within the interview_app folder
 
-# Windows
-init.bat
-```
+# create and launch a virtual environment for the project
+pipenv shell
 
-## Running for development
+# install dependencies
+pipenv install
 
-To start the development server, use the `run` script:
+# initialise database
+pipenv run init-db
 
-```
-# Mac/Linux
-./run.sh
-
-# Windows
-run.bat
+# start the dev server
+pipenv run devserver
 ```
 
-Once started, the app can be accessed at http://localhost:5000/
+Once the dev server is started, the app can be accessed at http://localhost:5000/
 
 The default user is **user1**, password: **letmein**
 
