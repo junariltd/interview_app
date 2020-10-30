@@ -1,27 +1,30 @@
 import time
 from werkzeug.security import generate_password_hash
+from .models import User, Contact
 
 
 def create_demo_data(db):
+
     # Create user1 / letmein user
-    cr = db.cursor()
-    cr.execute(
-        "INSERT INTO users (username, password) VALUES (?, ?)",
-        ('user1', generate_password_hash('letmein')),
+    user1 = User(
+        username='user1',
+        password=generate_password_hash('letmein')
     )
-    user_id = cr.lastrowid
+    db.session.add(user1)
+    db.session.commit()
+
+    uid = user1.id
+
     # Create demo contacts
     contacts = [
-        ('ABC Customer Ltd', 'Mark', 'Otto'),
-        ('Dom\'s Doughnuts', 'Jacob', 'Thornton'),
-        ('Ed\'s Kebabs', 'Larry', 'the Bird')
+        Contact(company_name='ABC Customer Ltd', first_name='Mark',
+                last_name='Otto', created_user_id=uid, updated_user_id=uid),
+        Contact(company_name='Dom\'s Doughnuts', first_name='Jacob',
+                last_name='Thornton', created_user_id=uid, updated_user_id=uid),
+        Contact(company_name='Ed\'s Kebabs', first_name='Larry',
+                last_name='the Bird', created_user_id=uid, updated_user_id=uid)
     ]
-    insert_stmt = """INSERT INTO contacts (company_name, first_name, last_name,
-        created_date, created_user_id, updated_date, updated_user_id)
-        VALUES (?,?,?,?,?,?,?)"""
-    now = time.strftime("%Y-%m-%d %H:%M:%S")
-    meta = (now, user_id, now, user_id)
+
     for contact in contacts:
-        cr.execute(insert_stmt, contact + meta)
-    cr.close()
-    db.commit()
+        db.session.add(contact)
+    db.session.commit()

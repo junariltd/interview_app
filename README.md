@@ -43,7 +43,7 @@ pipenv shell
 pipenv install
 
 # initialise database
-pipenv run init-db
+pipenv run initdb
 
 # start the dev server
 pipenv run devserver
@@ -62,6 +62,7 @@ and **does not require a build step**. The front-end code can be found in the
 ## Useful References
 
 * [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/#tutorial)
+* [SQLAlchemy ORM Tutorial](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
 * [Odoo Web Library Docs](https://github.com/odoo/owl/blob/master/doc/readme.md)
 * [QWeb Template Language Docs](https://github.com/odoo/owl/blob/master/doc/reference/qweb_templating_language.md)
 * [Odoo Web Library Playground](https://odoo.github.io/owl/playground/)

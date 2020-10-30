@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
 
 [packages]
 click = "==7.1.2"
@@ -18,5 +19,5 @@ flask-sqlalchemy = "*"
 python_version = "3.9"
 
 [scripts]
-init-db = "flask init-db"
+initdb = "flask initdb"
 devserver = "flask run"
