@@ -1,5 +1,5 @@
 
-from ..db import get_db, dictfetchall
+from ..db.models import Contact
 from ..auth import login_required
 from flask import jsonify, request, session
 import time

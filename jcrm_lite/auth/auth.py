@@ -5,7 +5,7 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from ..db import get_db
+from ..db.models import User
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
 
@@ -33,7 +33,7 @@ def load_logged_in_user():
         g.user = None
     else:
         g.user = (
-            get_db().execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
+            User.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
         )
 
 
