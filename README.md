@@ -13,7 +13,7 @@ framework - a modern React/Vue-like framework.
 
 ## Requirements
 
-* Python 3.7 or above
+* Python 3.9
 * A modern web browser (Chrome or Firefox recommended).
   The app uses JS modules and async functions.
 
