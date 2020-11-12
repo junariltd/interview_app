@@ -27,7 +27,7 @@ installing it.
 Once you have `pipenv` set up, check-out the repository onto your local machine
 
 ```bash
-git clone git@github.com:junariltd/interview_app.git
+git clone https://github.com/junariltd/interview_app.git
 cd interview_app
 ```
 
