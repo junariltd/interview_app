@@ -8,7 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from ..db import db
 from ..db.models import User
 
-bp = Blueprint("auth", __name__, url_prefix="/auth")
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
 def login_required(view):
@@ -17,7 +17,7 @@ def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for("auth.login"))
+            return redirect(url_for('auth.login'))
 
         return view(**kwargs)
 
@@ -28,7 +28,7 @@ def login_required(view):
 def load_logged_in_user():
     """If a user id is stored in the session, load the user object from
     the database into ``g.user``."""
-    user_id = session.get("user_id")
+    user_id = session.get('user_id')
 
     if user_id is None:
         g.user = None
@@ -36,27 +36,27 @@ def load_logged_in_user():
         g.user = User.query.filter_by(id=user_id).first()
 
 
-@bp.route("/register", methods=("GET", "POST"))
+@bp.route('/register', methods=('GET', 'POST'))
 def register():
     """Register a new user.
 
     Validates that the username is not already taken. Hashes the
     password for security.
     """
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
         error = None
 
         if not username:
-            error = "Username is required."
+            error = 'Username is required.'
         elif not password:
-            error = "Password is required."
+            error = 'Password is required.'
         elif (
             User.query.filter_by(username=username).first()
             is not None
         ):
-            error = "User {0} is already registered.".format(username)
+            error = 'User {0} is already registered.'.format(username)
 
         if error is None:
             # the name is available, store it in the database and go to
@@ -66,40 +66,40 @@ def register():
                 password=generate_password_hash(password)
             ))
             db.session.commit()
-            return redirect(url_for("auth.login"))
+            return redirect(url_for('auth.login'))
 
         flash(error)
 
-    return render_template("auth/register.html")
+    return render_template('auth/register.html')
 
 
-@bp.route("/login", methods=("GET", "POST"))
+@bp.route('/login', methods=('GET', 'POST'))
 def login():
     """Log in a registered user by adding the user id to the session."""
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
         error = None
 
         user = User.query.filter_by(username=username).first()
         if user is None:
-            error = "Incorrect username."
+            error = 'Incorrect username.'
         elif not check_password_hash(user.password, password):
-            error = "Incorrect password."
+            error = 'Incorrect password.'
 
         if error is None:
             # store the user id in a new session and return to the index
             session.clear()
-            session["user_id"] = user.id
-            return redirect(url_for("index"))
+            session['user_id'] = user.id
+            return redirect(url_for('index'))
 
         flash(error)
 
-    return render_template("auth/login.html")
+    return render_template('auth/login.html')
 
 
-@bp.route("/logout")
+@bp.route('/logout')
 def logout():
     """Clear the current session, including the stored user id."""
     session.clear()
-    return redirect(url_for("index"))
+    return redirect(url_for('index'))

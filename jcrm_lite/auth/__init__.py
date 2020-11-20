@@ -1,3 +1,1 @@
-from .auth import (
-    login_required, bp
-)
+from .auth import login_required, bp

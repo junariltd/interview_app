@@ -32,9 +32,6 @@ def create_app(test_config=None):
     db.init_app(app)
     initdb.register_command(app)
 
-    # init auth
-    app.register_blueprint(auth.bp)
-
     # routes
     routes.register_routes(app)
 
