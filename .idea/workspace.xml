@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55988beb-852f-4cf8-a067-3db447ee139e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/auth/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/auth/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/auth/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcrm_lite/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +127,7 @@
       <workItem from="1605454648295" duration="13988000" />
       <workItem from="1605539659611" duration="3340000" />
       <workItem from="1605543617112" duration="2720000" />
-      <workItem from="1605887254541" duration="3499000" />
+      <workItem from="1605887254541" duration="4034000" />
     </task>
     <servers />
   </component>
