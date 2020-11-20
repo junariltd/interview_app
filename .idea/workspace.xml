@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55988beb-852f-4cf8-a067-3db447ee139e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcrm_lite/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/jcrm_lite/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,29 +83,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.devserver">
-    <configuration name="devserver" type="ShConfigurationType">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="/usr/local/bin/pipenv" />
-      <option name="SCRIPT_OPTIONS" value="run devserver" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="initdb" type="ShConfigurationType">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="/usr/local/bin/pipenv" />
-      <option name="SCRIPT_OPTIONS" value="run initdb" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Shell Script.initdb">
     <list>
       <item itemvalue="Shell Script.devserver" />
       <item itemvalue="Shell Script.initdb" />
@@ -127,7 +105,7 @@
       <workItem from="1605454648295" duration="13988000" />
       <workItem from="1605539659611" duration="3340000" />
       <workItem from="1605543617112" duration="2720000" />
-      <workItem from="1605887254541" duration="4034000" />
+      <workItem from="1605887254541" duration="4429000" />
     </task>
     <servers />
   </component>
@@ -151,10 +129,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="530" y="245" key="#Inspections/0.0.1792.1120@0.0.1792.1120" timestamp="1605221755118" />
-    <state x="2306" y="-35" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605540052551">
+    <state x="2306" y="-35" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605911439328">
       <screen x="1792" y="-320" width="2560" height="1440" />
     </state>
-    <state x="2306" y="-35" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120/1792.-320.2560.1440@1792.-320.2560.1440" timestamp="1605540052551" />
+    <state x="2306" y="-35" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120/1792.-320.2560.1440@1792.-320.2560.1440" timestamp="1605911439328" />
     <state x="360" y="222" width="1071" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1605323103742" />
     <state width="1204" height="318" key="GridCell.Tab.0.bottom" timestamp="1605323385998">
       <screen x="0" y="0" width="1792" height="1120" />
