@@ -1,7 +1,8 @@
 
 from flask import render_template
 from .auth import login_required
-from .api import register_api
+from .api import bp as api_bp
+from .auth import bp as auth_bp
 
 
 def register_routes(app):
@@ -12,4 +13,5 @@ def register_routes(app):
     def index(path='/'):
         return render_template('app.html')
 
-    register_api(app)
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(api_bp)

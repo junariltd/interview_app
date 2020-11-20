@@ -1,1 +1,1 @@
-from .api import register_api
+from .api import bp
